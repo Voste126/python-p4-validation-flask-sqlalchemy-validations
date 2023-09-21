@@ -9,6 +9,7 @@ class EmailAddress(db.Model):
     email = db.Column(db.String)
     backup_email = db.Column(db.String)
 
+#validation using validates and use of import validates 
     @validates('email', 'backup_email')
     def validate_email(self, key, address):
         if '@' not in address:
